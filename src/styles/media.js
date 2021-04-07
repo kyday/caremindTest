@@ -1,12 +1,12 @@
 import { css } from "styled-components";
 
-const sizes = {
+const device = {
   desktop: 1024,
   mobile: 480,
 };
-export default Object.keys(sizes).reduce((acc, label) => {
+export default Object.keys(device).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label]}px) {
+    @media (max-width: ${device[label]}px) {
       ${css(...args)};
     }
   `;
